@@ -1,0 +1,41 @@
+<h2 class="d-flex justify-content-center">{{ title }}</h2>
+<form class="container" ngNativeValidate (submit)="onFormSubmitted($event)">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      placeholder="Jane Doe"
+      name="firstName"
+      [(ngModel)]="firstName"
+      required
+      autofocus
+    />
+  </div>
+  <div class="form-group">
+    <label for="residesIn">Hometown</label>
+    <input
+      type="text"
+      class="form-control"
+      id="residesIn"
+      placeholder="Ft. Worth, TX"
+      name="residesIn"
+      [(ngModel)]="residesIn"
+    />
+  </div>
+  <input type="submit" value="Submit" />
+</form>
+<br />
+<div class="container">
+  <table class="table table-bordered">
+    <tr>
+      <td>First Name</td>
+      <td>{{ firstName }}</td>
+    </tr>
+    <tr>
+      <td class="w-35">Hometown</td>
+      <td class="w-75">{{ residesIn }}</td>
+    </tr>
+  </table>
+</div>
