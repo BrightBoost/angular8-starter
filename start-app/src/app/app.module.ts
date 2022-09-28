@@ -1,14 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { SomethingComponent } from './something/something.component';
-import { HeaderComponent } from './header/header.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { UserinputComponent } from './userinput/userinput.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
+import { SomethingComponent } from "./something/something.component";
+import { HeaderComponent } from "./header/header.component";
+import { EmployeeComponent } from "./employee/employee.component";
+import { UserinputComponent } from "./userinput/userinput.component";
+import { EventdemoComponent } from "./eventdemo/eventdemo.component";
+import { ExampledirComponent } from "./exampledir/exampledir.component";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -16,8 +18,8 @@ const appRoutes: Routes = [
   { path: "about/something", component: SomethingComponent },
   { path: "employee", component: EmployeeComponent },
   { path: "userinput", component: UserinputComponent },
-
-
+  { path: "eventdemo", component: EventdemoComponent },
+  { path: "exampledir", component: ExampledirComponent },
 ];
 
 @NgModule({
@@ -28,14 +30,12 @@ const appRoutes: Routes = [
     SomethingComponent,
     HeaderComponent,
     EmployeeComponent,
-    UserinputComponent
+    UserinputComponent,
+    EventdemoComponent,
+    ExampledirComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule
-    ],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

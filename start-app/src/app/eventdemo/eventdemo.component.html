@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row d-flex justify-content-center m-5">
+    <button
+      type="button"
+      class="btn btn-danger p-5"
+      (click)="onButton1Clicked($event)"
+    >
+      1
+    </button>
+    <button
+      type="button"
+      class="btn btn-success p-5"
+      (click)="onButton2Clicked()"
+    >
+      2
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary p-5"
+      (click)="onButton3Clicked()"
+    >
+      3
+    </button>
+  </div>
+</div>
