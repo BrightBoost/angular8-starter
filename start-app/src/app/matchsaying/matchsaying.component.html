@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <label for="categoriesDDL">Type of saying: </label>
+    <select id="categoriesDDL" (change)="onSelectSaying($event)">
+      <option value="">Select one...</option>
+      <option *ngFor="let category of categories">
+        {{ category }}
+      </option>
+    </select>
+  </div>
+  <div class="row mt-5">
+    <table class="table table-bordered">
+      <thead
+        *ngIf="matchingSayings.length > 0; else noHeader"
+        class="thead-dark"
+      >
+        <tr>
+          <th>Category</th>
+          <th>Quote</th>
+        </tr>
+      </thead>
+      <ng-template #noHeader> No header available </ng-template>
+      <tbody *ngIf="matchingSayings.length > 0; else noSayings">
+        <tr *ngFor="let saying of matchingSayings">
+          <td>{{ saying.category }}</td>
+          <td>{{ saying.quote }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noSayings> No sayings available </ng-template>
+  </div>
+</div>

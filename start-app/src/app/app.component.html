@@ -1,4 +1,6 @@
 <app-header></app-header>
+<app-dashboard title="My dashboard" [userName]="userName"></app-dashboard>
+<app-login (userNameEvent)="receivedUserNameEvent($event)"> </app-login>
 <main>
   <router-outlet></router-outlet>
 </main>

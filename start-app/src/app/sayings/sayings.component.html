@@ -1,0 +1,23 @@
+<div class="row mt-5">
+  <button type="button" (click)="onShowClicked()">Show Sayings</button>
+</div>
+<div class="row mt-5">
+  <table class="table table-bordered" *ngIf="showSayings; else noSayings">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Quote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let saying of sayings">
+        <td>{{ saying.category }}</td>
+        <td>{{ saying.quote }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- This is the ng-template referenced above (#) when
+the *ngIf condition is false -->
+  <ng-template #noSayings> No sayings available </ng-template>
+</div>
+<p id="test"></p>

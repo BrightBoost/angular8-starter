@@ -11,6 +11,10 @@ import { EmployeeComponent } from "./employee/employee.component";
 import { UserinputComponent } from "./userinput/userinput.component";
 import { EventdemoComponent } from "./eventdemo/eventdemo.component";
 import { ExampledirComponent } from "./exampledir/exampledir.component";
+import { SayingsComponent } from './sayings/sayings.component';
+import { MatchsayingComponent } from './matchsaying/matchsaying.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -20,6 +24,8 @@ const appRoutes: Routes = [
   { path: "userinput", component: UserinputComponent },
   { path: "eventdemo", component: EventdemoComponent },
   { path: "exampledir", component: ExampledirComponent },
+  { path: "sayings", component: SayingsComponent },
+  { path: "matchsayings", component: MatchsayingComponent },
 ];
 
 @NgModule({
@@ -33,6 +39,10 @@ const appRoutes: Routes = [
     UserinputComponent,
     EventdemoComponent,
     ExampledirComponent,
+    SayingsComponent,
+    MatchsayingComponent,
+    LoginComponent,
+    DashboardComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
   providers: [],
