@@ -2,6 +2,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
@@ -17,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DateDisplayComponent } from './date-display/date-display.component';
 import { DateService } from "./providers/date.service";
+import { ExampleobsComponent } from './exampleobs/exampleobs.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -29,6 +32,7 @@ const appRoutes: Routes = [
   { path: "sayings", component: SayingsComponent },
   { path: "matchsayings", component: MatchsayingComponent },
   { path: "dates", component: DateDisplayComponent },
+  { path: "obs", component: ExampleobsComponent },
 ];
 
 @NgModule({
@@ -47,8 +51,9 @@ const appRoutes: Routes = [
     LoginComponent,
     DashboardComponent,
     DateDisplayComponent,
+    ExampleobsComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, HttpClientModule ],
   providers: [],
   bootstrap: [AppComponent],
 })

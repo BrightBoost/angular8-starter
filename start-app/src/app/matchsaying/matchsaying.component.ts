@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Saying } from "../models/saying.model";
 import { SayingsService } from "../providers/sayings.service";
 
 @Component({
@@ -9,24 +10,24 @@ import { SayingsService } from "../providers/sayings.service";
 })
 export class MatchsayingComponent implements OnInit {
   categories: Array<string> = [];
-  sayings: Array<any> = [];
+  sayings: Array<Saying> = [];
   matchingSayings: Array<any> = [];
 
-  constructor(private sayingsService: SayingsService) {
-    // load the sayings
-    this.sayings = this.sayingsService.getSayings();
-    this.categories = this.sayingsService.getCategories();
-    
-  }
-  
+  constructor(private sayingsService: SayingsService) {}
+
   onSelectSaying(event): void {
     let selectedCategory = event.target.value;
-    if ((selectedCategory == "")) {
+    if (selectedCategory == "") {
       this.matchingSayings = [];
     } else {
-      this.matchingSayings = this.sayingsService.getSayingsThatMatchCategory(selectedCategory);
+      this.matchingSayings =
+        this.sayingsService.getSayingsThatMatchCategory(selectedCategory);
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // load the sayings
+    this.sayings = this.sayingsService.getSayings();
+    this.categories = this.sayingsService.getCategories();
+  }
 }
