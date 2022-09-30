@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { SayingsService } from "../providers/sayings.service";
 
 @Component({
   selector: "app-matchsaying",
@@ -11,35 +12,11 @@ export class MatchsayingComponent implements OnInit {
   sayings: Array<any> = [];
   matchingSayings: Array<any> = [];
 
-  constructor() {
-    this.categories = ["Inspiration", "Staying Safe", "Statistics"];
+  constructor(private sayingsService: SayingsService) {
     // load the sayings
-    this.sayings = [
-      {
-        category: "Inspiration",
-        quote:
-          "You're braver than you believe, and stronger than you seem, and smarter than you think.",
-      },
-      {
-        category: "Inspiration",
-        quote:
-          "Nothing is particularly hard if you break it down into small jobs.",
-      },
-      {
-        category: "Staying Safe",
-        quote: "An apple a day keeps the doctor away.",
-      },
-      {
-        category: "Staying Safe",
-        quote:
-          "A ship in a harbor is safe, but that is not what ships are for.",
-      },
-      {
-        category: "Statistics",
-        quote:
-          "He uses statistics as a drunken man uses lamp posts... for support rather than illumination.",
-      },
-    ];
+    this.sayings = this.sayingsService.getSayings();
+    this.categories = this.sayingsService.getCategories();
+    
   }
   
   onSelectSaying(event): void {
@@ -47,9 +24,7 @@ export class MatchsayingComponent implements OnInit {
     if ((selectedCategory == "")) {
       this.matchingSayings = [];
     } else {
-      this.matchingSayings = this.sayings.filter(
-        (s) => s.category == selectedCategory
-      );
+      this.matchingSayings = this.sayingsService.getSayingsThatMatchCategory(selectedCategory);
     }
   }
 

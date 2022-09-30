@@ -15,6 +15,8 @@ import { SayingsComponent } from './sayings/sayings.component';
 import { MatchsayingComponent } from './matchsaying/matchsaying.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DateDisplayComponent } from './date-display/date-display.component';
+import { DateService } from "./providers/date.service";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -26,6 +28,7 @@ const appRoutes: Routes = [
   { path: "exampledir", component: ExampledirComponent },
   { path: "sayings", component: SayingsComponent },
   { path: "matchsayings", component: MatchsayingComponent },
+  { path: "dates", component: DateDisplayComponent },
 ];
 
 @NgModule({
@@ -43,6 +46,7 @@ const appRoutes: Routes = [
     MatchsayingComponent,
     LoginComponent,
     DashboardComponent,
+    DateDisplayComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
   providers: [],
